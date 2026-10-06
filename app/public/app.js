@@ -75,7 +75,8 @@ function secIdx(n, t) {
 }
 const gpos = () => chapter().offset + S.t;
 // Zvuk: lokálně z disku (/files/<kniha>/), na webu z úložiště zadaného v book.json jako audioBase.
-const audioUrl = (c) => `${S.book.audioBase || `/files/${S.book.id}/`}${encodeURI(c.file)}`;
+// Pokud je `file` celá URL (např. epizoda podcastu), hraje se rovnou z ní a nic se nikam nenahrává.
+const audioUrl = (c) => (/^https?:\/\//.test(c.file) ? c.file : `${S.book.audioBase || `/files/${S.book.id}/`}${encodeURI(c.file)}`);
 
 // ------------------------------------------------------------------ přehrávání
 // Jediný posluchač metadat: nastaví pozici a případně spustí přehrávání podle POSLEDNÍ žádosti

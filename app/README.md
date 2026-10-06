@@ -26,13 +26,19 @@ cd ~/Audioknihy/app
 
 Rozbalí zip, zjistí délky, přepíše zvuk (Whisper large-v3-turbo, cca 10× rychleji než realtime) a připraví text. Potom v Claude Code řekni „vytvoř shrnutí kapitol pro knihu <složka>" – shrnutí se ukládají do `insights/NN.json`.
 
-Kroky po přepisu (`add_book.py` je zatím nedělá všechny sám):
+`add_book.py` po přepisu sám doplní vynechané úseky řeči (`patch_gaps.py`), odstraní halucinace na tichu (`clean_transcripts.py`) a připraví text (`to_text.py`). Shrnutí se dělají až z opraveného přepisu.
 
-```sh
-.venv/bin/python scripts/patch_gaps.py  ~/Audioknihy/<kniha>   # doplní vynechané úseky řeči
-python3 -I scripts/clean_transcripts.py ~/Audioknihy/<kniha>   # odstraní halucinace na tichu
-python3 -I scripts/to_text.py           ~/Audioknihy/<kniha>   # text pro shrnování
-```
+## Web na Vercelu (poslech odkudkoli)
+
+Git a Vercel nesou jen kód a text; **zvuk se do gitu nedává** (kniha = ~0,5 GB, GitHub odmítne soubor nad 100 MB). Zvuk jde do Cloudflare R2 a aplikace ho čte přes `audioBase` v `meta.json`.
+
+1. Cloudflare dashboard > R2 > vytvoř bucket (např. `audioknihy`) a v jeho nastavení zapni **Public access (R2.dev subdomain)**.
+2. R2 > Manage R2 API Tokens > nový token s oprávněním *Object Read & Write* pro ten bucket.
+3. `cp .env.example .env` a doplň údaje (soubor `.env` je v `.gitignore`).
+4. `.venv/bin/python scripts/upload_audio.py ~/Audioknihy/<kniha>` – nahraje zvuk a zapíše `audioBase`.
+5. Commitni `meta.json` + `book.json` a pushni; Vercel se nasadí sám (`vercel.json` je v repu, nic nastavovat nemusíš).
+
+Přepisy a shrnutí (`transcript/`, `insights/`) jsou v `.gitignore`, dokud je GitHub repo veřejné; po přepnutí na soukromé ty dva řádky smaž. Podcasty se nestahují: do `file` kapitoly dej přímo URL epizody a hraje se z původního serveru.
 
 ## Struktura
 

@@ -70,6 +70,9 @@ def main():
     py = sys.executable
     subprocess.run([py, "-I", str(HERE / "build_book.py"), str(book)], check=True)
     subprocess.run([py, str(HERE / "transcribe.py"), str(book)], check=True)
+    # Whisper občas vynechá ~30 s řeči a na tichu si vymýšlí text – opravit PŘED shrnováním
+    subprocess.run([py, str(HERE / "patch_gaps.py"), str(book), "--min-gap", "4.5"], check=True)
+    subprocess.run([py, "-I", str(HERE / "clean_transcripts.py"), str(book)], check=True)
     subprocess.run([py, "-I", str(HERE / "to_text.py"), str(book)], check=True)
     print(f"\nHotovo. Kniha je v {book}. Zbývá vytvořit shrnutí kapitol (složka insights/).")
 

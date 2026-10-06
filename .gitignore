@@ -26,3 +26,9 @@ app/data/
 # Change visibility), tyto dva řádky smaž a vše se začne nasazovat na Vercel automaticky.
 */transcript/
 */insights/
+
+# --- tajné klíče ---
+.env
+*.env
+!.env.example
+!app/.env.example
