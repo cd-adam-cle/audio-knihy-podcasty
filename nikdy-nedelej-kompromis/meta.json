@@ -1,0 +1,56 @@
+{
+  "id": "nikdy-nedelej-kompromis",
+  "title": "Nikdy nedělej kompromis",
+  "subtitle": "Vyjednávej tak, jako by ti šlo o život",
+  "author": "Chris Voss",
+  "narrator": "Petr Hanák",
+  "publisher": "Jan Melvil Publishing",
+  "cover": "cover.jpg",
+  "description": "Vyjednávací taktiky agentů FBI, které se nejvíc osvědčily v kritických, ale i každodenních situacích. Chris Voss byl 24 let hlavním vyjednavačem FBI s únosci.",
+  "chapters": [
+    {
+      "file": "01 Nova pravidla.mp3",
+      "title": "Nová pravidla"
+    },
+    {
+      "file": "02 Budte zrcadlem.mp3",
+      "title": "Buďte zrcadlem"
+    },
+    {
+      "file": "03 Neprozivejte jejich emoce pojmenujte je.mp3",
+      "title": "Neprožívejte jejich emoce, pojmenujte je"
+    },
+    {
+      "file": "04 Pozor na ano - kouzlete s ne.mp3",
+      "title": "Pozor na „ano“, kouzlete s „ne“"
+    },
+    {
+      "file": "05 Tri kriticka slova ktera okamzite zmeni kazde vyjednavani.mp3",
+      "title": "Tři kritická slova, která okamžitě změní každé vyjednávání"
+    },
+    {
+      "file": "06 Umeni ohybat realitu.mp3",
+      "title": "Umění ohýbat realitu"
+    },
+    {
+      "file": "07 Vytvorte iluzi kontroly.mp3",
+      "title": "Vytvořte iluzi kontroly"
+    },
+    {
+      "file": "08 Zajistete realizaci.mp3",
+      "title": "Zajistěte realizaci"
+    },
+    {
+      "file": "09 Tvrde smlouvejte.mp3",
+      "title": "Tvrdě smlouvejte"
+    },
+    {
+      "file": "10 Jak najit cernou labut.mp3",
+      "title": "Jak najít černou labuť"
+    },
+    {
+      "file": "11 Dodatek.mp3",
+      "title": "Dodatek"
+    }
+  ]
+}

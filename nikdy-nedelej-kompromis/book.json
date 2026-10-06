@@ -1,0 +1,101 @@
+{
+  "id": "nikdy-nedelej-kompromis",
+  "title": "Nikdy nedělej kompromis",
+  "subtitle": "Vyjednávej tak, jako by ti šlo o život",
+  "author": "Chris Voss",
+  "narrator": "Petr Hanák",
+  "publisher": "Jan Melvil Publishing",
+  "cover": "cover.jpg",
+  "description": "Vyjednávací taktiky agentů FBI, které se nejvíc osvědčily v kritických, ale i každodenních situacích. Chris Voss byl 24 let hlavním vyjednavačem FBI s únosci.",
+  "duration": 32945.11,
+  "chapters": [
+    {
+      "index": 1,
+      "id": "01",
+      "title": "Nová pravidla",
+      "file": "audio/01 Nova pravidla.mp3",
+      "duration": 2948.89,
+      "offset": 0.0
+    },
+    {
+      "index": 2,
+      "id": "02",
+      "title": "Buďte zrcadlem",
+      "file": "audio/02 Budte zrcadlem.mp3",
+      "duration": 3154.32,
+      "offset": 2948.89
+    },
+    {
+      "index": 3,
+      "id": "03",
+      "title": "Neprožívejte jejich emoce, pojmenujte je",
+      "file": "audio/03 Neprozivejte jejich emoce pojmenujte je.mp3",
+      "duration": 3411.55,
+      "offset": 6103.21
+    },
+    {
+      "index": 4,
+      "id": "04",
+      "title": "Pozor na „ano“, kouzlete s „ne“",
+      "file": "audio/04 Pozor na ano - kouzlete s ne.mp3",
+      "duration": 2806.55,
+      "offset": 9514.76
+    },
+    {
+      "index": 5,
+      "id": "05",
+      "title": "Tři kritická slova, která okamžitě změní každé vyjednávání",
+      "file": "audio/05 Tri kriticka slova ktera okamzite zmeni kazde vyjednavani.mp3",
+      "duration": 2122.22,
+      "offset": 12321.31
+    },
+    {
+      "index": 6,
+      "id": "06",
+      "title": "Umění ohýbat realitu",
+      "file": "audio/06 Umeni ohybat realitu.mp3",
+      "duration": 3872.87,
+      "offset": 14443.53
+    },
+    {
+      "index": 7,
+      "id": "07",
+      "title": "Vytvořte iluzi kontroly",
+      "file": "audio/07 Vytvorte iluzi kontroly.mp3",
+      "duration": 2797.07,
+      "offset": 18316.4
+    },
+    {
+      "index": 8,
+      "id": "08",
+      "title": "Zajistěte realizaci",
+      "file": "audio/08 Zajistete realizaci.mp3",
+      "duration": 3301.23,
+      "offset": 21113.47
+    },
+    {
+      "index": 9,
+      "id": "09",
+      "title": "Tvrdě smlouvejte",
+      "file": "audio/09 Tvrde smlouvejte.mp3",
+      "duration": 3295.56,
+      "offset": 24414.7
+    },
+    {
+      "index": 10,
+      "id": "10",
+      "title": "Jak najít černou labuť",
+      "file": "audio/10 Jak najit cernou labut.mp3",
+      "duration": 4244.33,
+      "offset": 27710.26
+    },
+    {
+      "index": 11,
+      "id": "11",
+      "title": "Dodatek",
+      "file": "audio/11 Dodatek.mp3",
+      "duration": 990.52,
+      "offset": 31954.59
+    }
+  ]
+}

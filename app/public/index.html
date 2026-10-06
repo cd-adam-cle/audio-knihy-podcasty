@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Audioknihy</title>
+<meta name="theme-color" content="#F7F6F3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151413" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6a.6.6 0 0 0 .9.5l10.8-6.8a.6.6 0 0 0 0-1L8.9 4.7a.6.6 0 0 0-.9.5z" fill="currentColor"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6.2" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/><rect x="13.6" y="5" width="4.2" height="14" rx="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12a7.5 7.5 0 1 0 2.3-5.4"/><path d="M4.5 4.5v4h4"/></g><text x="12" y="15.2" text-anchor="middle" font-size="7.4" font-weight="600" fill="currentColor" font-family="Geist, system-ui, sans-serif">15</text></symbol>
+    <symbol id="i-fwd" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12a7.5 7.5 0 1 1-2.3-5.4"/><path d="M19.5 4.5v4h-4"/></g><text x="12" y="15.2" text-anchor="middle" font-size="7.4" font-weight="600" fill="currentColor" font-family="Geist, system-ui, sans-serif">30</text></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5.5v13"/><path d="M18.5 6v12L9.5 12z"/></g></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 5.5v13"/><path d="M5.5 6v12L14.5 12z"/></g></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M7 4.5h10a.5.5 0 0 1 .5.5v14.6a.4.4 0 0 1-.65.3L12 16l-4.85 3.9a.4.4 0 0 1-.65-.3V5a.5.5 0 0 1 .5-.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.8 14.6A8 8 0 0 1 9.4 4.2a8 8 0 1 0 10.4 10.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10.8" cy="10.8" r="6.3"/><path d="M15.5 15.5l4.5 4.5"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.6 4.6L19 7.6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6.5 9.5l5.5 5.5 5.5-5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="app" id="app">
+  <nav class="tabs" id="tabs" role="tablist">
+    <button role="tab" data-tab="orient" class="tab-orient">Orientace</button>
+    <button role="tab" data-tab="text">Přepis</button>
+    <button role="tab" data-tab="insights">Poznatky</button>
+    <button role="tab" data-tab="search">Hledat</button>
+  </nav>
+  <section class="panel" id="p-orient" aria-label="Orientace v knize"></section>
+  <section class="panel" id="p-text" aria-label="Přepis"></section>
+  <section class="panel" id="p-insights" aria-label="Poznatky"></section>
+  <section class="panel" id="p-search" aria-label="Hledání v knize"></section>
+</div>
+
+<footer class="player" id="player">
+  <div class="where" id="where"><span id="w-left"></span><span id="w-right" class="mono"></span></div>
+  <div class="gwrap" id="gwrap"><div class="gbar" id="gbar" role="slider" aria-label="Poloha v celé knize" tabindex="-1"></div></div>
+  <div class="row">
+    <div class="now">
+      <img id="pcover" alt="" width="44" height="44">
+      <div class="now-t"><div id="ptitle" class="t"></div><div id="psub" class="s"></div></div>
+    </div>
+    <div class="ctl">
+      <button id="b-prev" title="Předchozí kapitola" aria-label="Předchozí kapitola"><svg><use href="#i-prev"/></svg></button>
+      <button id="b-back" title="Zpět o 15 s" aria-label="Zpět o 15 sekund"><svg><use href="#i-back"/></svg></button>
+      <button id="b-play" class="play" title="Přehrát / pozastavit (mezerník)" aria-label="Přehrát"><svg><use href="#i-play"/></svg></button>
+      <button id="b-fwd" title="Vpřed o 30 s" aria-label="Vpřed o 30 sekund"><svg><use href="#i-fwd"/></svg></button>
+      <button id="b-next" title="Další kapitola" aria-label="Další kapitola"><svg><use href="#i-next"/></svg></button>
+    </div>
+    <div class="scrub">
+      <span id="tcur" class="mono">0:00</span>
+      <input type="range" id="scrub" min="0" max="1" step="1" value="0" aria-label="Poloha v kapitole">
+      <span id="tleft" class="mono">-0:00</span>
+    </div>
+    <div class="opts">
+      <button id="b-speed" class="txt mono" title="Rychlost">1×</button>
+      <button id="b-sleep" class="txt" title="Časovač spánku"><svg><use href="#i-moon"/></svg><span id="sleep-l"></span></button>
+      <button id="b-mark" title="Přidat záložku (B)" aria-label="Přidat záložku"><svg><use href="#i-bookmark"/></svg></button>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<audio id="audio" preload="metadata"></audio>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

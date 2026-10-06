@@ -1,0 +1,10 @@
+{
+  "name": "Audioknihy",
+  "short_name": "Audioknihy",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7F6F3",
+  "theme_color": "#F7F6F3",
+  "lang": "cs",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

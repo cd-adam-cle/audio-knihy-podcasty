@@ -1,0 +1,28 @@
+# --- prostředí a lokální stav ---
+.venv/
+node_modules/
+dist/
+.DS_Store
+*.log
+app/data/
+.vercel/
+
+# --- ZVUK: nikdy do gitu (stovky MB na knihu; GitHub odmítne soubor nad 100 MB) ---
+# Zvuk patří do úložiště (Cloudflare R2 / Vercel Blob), aplikace ho čte přes "audioBase" v meta.json.
+**/audio/
+*.mp3
+*.m4a
+*.m4b
+*.wav
+
+# --- pracovní a záložní soubory ---
+**/work/
+**/*.orig
+**/*.bak
+**/*.tmp
+
+# --- OBSAH KNIH: přepisy a shrnutí = text chráněných děl ---
+# Repo je teď VEŘEJNÉ, proto se to NEcommituje. Až ho přepneš na soukromé (Settings > Danger zone >
+# Change visibility), tyto dva řádky smaž a vše se začne nasazovat na Vercel automaticky.
+*/transcript/
+*/insights/
